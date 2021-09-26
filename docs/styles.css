@@ -1,0 +1,86 @@
+:root {
+  --bg: #08122c;
+  --panel: rgba(14, 27, 58, 0.84);
+  --accent: #4dd0e1;
+  --text: #eaf6ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+header, .controls {
+  position: relative;
+  z-index: 2;
+}
+header {
+  text-align: center;
+  padding: 1rem 1rem 0.3rem;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  background: var(--panel);
+  backdrop-filter: blur(4px);
+}
+button, input {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+}
+button {
+  background: linear-gradient(120deg, #00bcd4, #0088ff);
+  color: white;
+  cursor: pointer;
+}
+#map {
+  height: calc(100vh - 160px);
+  position: relative;
+  z-index: 1;
+}
+.bg-animation {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, #103d6c 0, transparent 35%),
+    radial-gradient(circle at 85% 70%, #0d6d75 0, transparent 30%),
+    linear-gradient(120deg, #071029, #0f1e46);
+  animation: shift 10s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes shift {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(30deg); }
+}
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0.8rem 1rem 1.2rem;
+  background: rgba(8, 18, 44, 0.65);
+  font-size: 0.95rem;
+}
+.site-footer p {
+  margin: 0.3rem 0;
+}
+.site-footer a {
+  color: #8fe9ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.gh-icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 4px;
+}
